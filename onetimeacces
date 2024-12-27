@@ -35,10 +35,7 @@ window.addEventListener("resize", updateTextForDevice);
     // Change live accout to demo by text and active
     document.getElementsByClassName("usermenu-mobile__info-name")[0].innerHTML =
   "LIVE";
-var newUrl = "/en/trade";
-window.history.pushState({}, "", newUrl);  
-
-    //   function for dynamic  all thing
+//   function for dynamic  all thing
 
     setInterval(function () {
         // Find Tha balance
