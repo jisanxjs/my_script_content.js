@@ -1,0 +1,32 @@
+// Change live accout to demo by text and active
+document.getElementsByClassName("usermenu__info-name")[0].innerHTML =
+  "LIVE";
+
+//   function for dynamic  all thing
+
+setInterval(function () {
+  // Find Tha balance
+  let blc = document.getElementsByClassName("usermenu__info-balance")[0]
+    .innerHTML;
+  blc = blc.replaceAll(",", "");
+  blc = blc.replaceAll("$", "");
+  blc = blc.replaceAll(".", "");
+  blc = blc.substring(0, blc.length - 2);
+  blc = parseInt(blc);
+
+  // set profile icoin
+  let icoin;
+  if (blc < 1500) {
+    icoin =
+      '<svg class="icon-profile-level-standart"><use xlink:href="/profile/images/spritemap.svg#icon-profile-level-standart"></use></svg>';
+  } else if (blc >= 1500 && blc < 4500) {
+    icoin =
+      '<svg class="icon-profile-level-standart"><use xlink:href="/profile/images/spritemap.svg#icon-profile-level-pro"></use></svg>';
+  } else if (blc >= 4500) {
+    icoin =
+      '<svg class="icon-profile-level-standart"><use xlink:href="/profile/images/spritemap.svg#icon-profile-level-vip"></use></svg>';
+  }
+
+// place profile icoin
+    document.getElementsByClassName("usermenu__info-levels")[0].innerHTML = icoin;
+}, 10);
